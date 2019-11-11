@@ -10,8 +10,7 @@ LesterHoly
 
 ### 最新
 
-* [test](https://www.holynlp.com/articles/2019/10/25/1571942197474.html)
-* [世界，你好！](https://www.holynlp.com/hello-solo)
+* [机器学习算法笔记--kNN](https://www.holynlp.com/articles/2019/11/10/1573401111306.html)
 
 
 

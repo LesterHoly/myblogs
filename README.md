@@ -10,6 +10,7 @@ LesterHoly
 
 ### 最新
 
+* [我在 GitHub 上的开源项目](https://www.holynlp.com/my-github-repos)
 * [机器学习算法笔记--kNN](https://www.holynlp.com/articles/2019/11/10/1573401111306.html)
 
 

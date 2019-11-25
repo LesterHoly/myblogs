@@ -10,6 +10,7 @@ LesterHoly
 
 ### 最新
 
+* [Ubuntu 18.04 初始配置及jira安装](https://www.holynlp.com/articles/2019/11/25/1574686167624.html)
 * [我在 GitHub 上的开源项目](https://www.holynlp.com/my-github-repos)
 * [机器学习算法笔记--kNN](https://www.holynlp.com/articles/2019/11/10/1573401111306.html)
 

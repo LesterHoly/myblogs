@@ -105,3 +105,21 @@ docker images
 ```
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 ```
+
+### Step3 docker-compose 安装
+
+#### 1. 切换到root用户
+
+```
+sudo -i
+```
+
+#### 2. 安装docker-compose
+
+```
+curl -L https://get.daocloud.io/docker/compose/releases/download/1.25.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+```
+
+```
+chmod +x /usr/local/bin/docker-compose
+```

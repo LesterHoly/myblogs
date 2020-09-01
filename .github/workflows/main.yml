@@ -24,6 +24,12 @@ jobs:
           USERNAME: ${{ secrets.USER }} # use pre-configured ssh_username value
           SERVER_DESTINATION: /var/www/xxx/ # put your repo files on this directory of the remote server
           script: |
-            cd /home/fming/mysite/
-            python manage.py migrate
-            supervisorctl restart web
+            cd ~/myblogs
+            git fetch
+            cd /root/docker_nginx/nginx/www/blog/source/_posts
+            rm -f *.md
+            cp -r ~/myblogs/*.md .
+            rm -f README.md
+            cd ~/docker_nginx/nginx/www/blog
+            hexo clean
+            hexo g -s

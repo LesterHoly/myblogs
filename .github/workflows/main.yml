@@ -13,19 +13,15 @@ jobs:
       - name: Checkout Repo # 1. checkout repo
         uses: actions/checkout@v2 # Use a third party action (https://github.com/actions/checkout)
 
-      - name: Deploy to Server # 2. deploy to remote server
-        uses: AEnterprise/rsync-deploy@v1.0 # Use a third party action (https://github.com/AEnterprise/rsync-deploy)
-        env:
-          DEPLOY_KEY: ${{ secrets.PEM }} # use pre-configured secret (the private key)
-          ARGS: -avz --delete # must have this variable
-          SERVER_PORT: "22" # SSH port
-          FOLDER: ./ # folder to push (./ is the root of current repo)
-          SERVER_IP: ${{ secrets.HOST }} # use pre-configured ssh_host value (e.g., IP or domain.com）
-          USERNAME: ${{ secrets.USER }} # use pre-configured ssh_username value
-          SERVER_DESTINATION: /var/www/xxx/ # put your repo files on this directory of the remote server
+      - name: start server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.PEM }}
           script: |
             cd ~/myblogs
-            git fetch
+            git pull
             cd /root/docker_nginx/nginx/www/blog/source/_posts
             rm -f *.md
             cp -r ~/myblogs/*.md .

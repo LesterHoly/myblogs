@@ -1,0 +1,29 @@
+name: Deploy Site
+
+on:
+  push:
+    branches:
+      - master # only run this workflow when there's a new commit pushed to the master branch
+
+jobs:
+  deploy: # job_id
+    runs-on: ubuntu-latest # environment: use ubuntu
+
+    steps: # automated steps
+      - name: Checkout Repo # 1. checkout repo
+        uses: actions/checkout@v2 # Use a third party action (https://github.com/actions/checkout)
+
+      - name: Deploy to Server # 2. deploy to remote server
+        uses: AEnterprise/rsync-deploy@v1.0 # Use a third party action (https://github.com/AEnterprise/rsync-deploy)
+        env:
+          DEPLOY_KEY: ${{ secrets.PEM }} # use pre-configured secret (the private key)
+          ARGS: -avz --delete # must have this variable
+          SERVER_PORT: "22" # SSH port
+          FOLDER: ./ # folder to push (./ is the root of current repo)
+          SERVER_IP: ${{ secrets.HOST }} # use pre-configured ssh_host value (e.g., IP or domain.com）
+          USERNAME: ${{ secrets.USER }} # use pre-configured ssh_username value
+          SERVER_DESTINATION: /var/www/xxx/ # put your repo files on this directory of the remote server
+          script: |
+            cd /home/fming/mysite/
+            python manage.py migrate
+            supervisorctl restart web

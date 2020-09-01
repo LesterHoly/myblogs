@@ -1,4 +1,27 @@
-### 在Ubuntu 18.04上安装和使用docker
+---
+title: 在Ubuntu 18.04上安装和使用docker
+date: 2020-03-01 09:54:07
+updated: 2020-03-01 09:54:07
+tags: docker
+categories: Ubuntu
+keywords:
+description:
+top_img:
+comments:
+cover: https://image.holynlp.com/2020-09-01-news-docker3-slider-1200x760.jpg
+toc:
+toc_number:
+auto_open:
+copyright:
+copyright_author:
+copyright_author_href:
+copyright_url:
+copyright_info:
+mathjax:
+aplayer:
+highlight_shrink:
+---
+
 
 [百度百科-docker](https://baike.baidu.com/item/Docker/13344470?fr=aladdin)
 
@@ -122,4 +145,5 @@ curl -L https://get.daocloud.io/docker/compose/releases/download/1.25.1/docker-c
 
 ```
 chmod +x /usr/local/bin/docker-compose
+docker-compose -v
 ```

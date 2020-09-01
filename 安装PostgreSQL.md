@@ -1,4 +1,28 @@
-Ubuntu 18.04 安装PostgreSQL9.6
+---
+title: Ubuntu 18.04 安装PostgreSQL9.6
+date: 2020-02-01 09:54:07
+updated: 2020-02-01 09:54:07
+tags: PostgreSQL
+categories: Ubuntu
+keywords:
+description:
+top_img:
+comments:
+cover: https://image.holynlp.com/2020-09-01-1_PY24xlr4TpOkXW04HUoqrQ.jpeg
+toc:
+toc_number:
+auto_open:
+copyright:
+copyright_author:
+copyright_author_href:
+copyright_url:
+copyright_info:
+mathjax:
+aplayer:
+highlight_shrink:
+---
+
+
 
 PostgreSQL，通常简称为Postgres，是一种开源的通用对象 - 关系数据库管理系统。 PostgreSQL具有许多高级功能，如在线备份，即时恢复，嵌套事务，SQL和JSON查询，多版本并发控制（MVCC），异步复制等。
 

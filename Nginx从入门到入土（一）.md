@@ -1,3 +1,27 @@
+---
+title: Nginx从入门到入土（一）
+date: 2020-06-01 09:54:07
+updated: 2020-06-01 09:54:07
+tags: Nginx
+categories: 后端
+keywords: Nginx
+description:
+top_img:
+comments:
+cover: https://image.holynlp.com/2020-09-01-nginx.webp
+toc:
+toc_number:
+auto_open:
+copyright:
+copyright_author:
+copyright_author_href:
+copyright_url:
+copyright_info:
+mathjax:
+aplayer:
+highlight_shrink:
+---
+
 ### 1. 什么是 nginx [nginx wiki](https://www.nginx.com/resources/wiki/)
 
 NGINX is a free, open-source, high-performance HTTP server and reverse proxy, as well as an IMAP/POP3 proxy server. NGINX is known for its high performance, stability, rich feature set, simple configuration, and low resource consumption.
@@ -8,25 +32,25 @@ NGINX is a free, open-source, high-performance HTTP server and reverse proxy, as
 
 > 在客户端（浏览器）配置代理服务器，通过代理服务器进行互联网访问
 
-![img](http://image.holynlp.com/2020-01-03-073954.png)
+![img](https://image.holynlp.com/2020-09-01-2020-01-03-073954.png)
 
 #### 反向代理
 
 > 反向代理对于客户端是无感知的，因为客户端不需要做任何配置就可以访问，我们只需要将请求发送到反向代理服务器，由反向代理服务器去选择目标服务器获取数据后，在返回给客户端，此时反向代理服务器和目标服务器对外就是一个服务器，暴露的是代理服务器地址，隐藏了真实服务器 ip 地址。
 
-![img](http://image.holynlp.com/2020-01-03-075534.png)
+![img](https://image.holynlp.com/2020-09-01-2020-01-03-075534.png)
 
 ### 3. 负载均衡
 
 > 在并发数大的时候，单个服务器无法及时产生响应，增加服务器的数量，将请求分发到各个服务器上，将原先请求集中到单个服务器上的情况改为将请求分发到多个服务器上，将负载分发到不同的服务器，也就是我们所说的负载均衡。
 
-![img](http://image.holynlp.com/2020-01-03-080704.png)
+![img](https://image.holynlp.com/2020-09-01-2020-01-03-080704.png)
 
 ### 4. 动静分离
 
 > 为了加快网站的解析速度，可以将动态页面和静态页面由不同的服务器来解析，加快解析速度，降低原来单个服务器的压力。
 
-![img](http://image.holynlp.com/2020-01-03-081558.png)
+![img](https://image.holynlp.com/2020-01-03-081558.png)
 
 ### nginx 在 Linux 系统中安装
 
@@ -63,14 +87,14 @@ Ubuntu 18.04.3 LTS \n \l
 #### 2. 安装 nginx
 
 ```shell
-sudo apt update  
+sudo apt update
 sudo apt install nginx -y
 ```
 
 #### 3. 管理 nginx
 
 ```shell
-sudo systemctl status nginx  
+sudo systemctl status nginx
 sudo systemctl start nginx
 sudo systemctl stop nginx
 sudo systemctl restart nginx

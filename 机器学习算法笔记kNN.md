@@ -1,10 +1,27 @@
-title: 机器学习算法笔记--kNN
-date: '2019-11-10 23:51:51'
-updated: '2019-11-10 23:59:35'
-tags: [machinelearning, kNN]
-permalink: /articles/2019/11/10/1573401111306.html
 ---
-## 机器学习算法--kNN
+title: 机器学习算法--kNN
+date: 2020-01-01 09:54:07
+updated: 2020-01-01 09:54:07
+tags: knn
+categories: machine-learning
+keywords:
+description:
+top_img:
+comments:
+cover: https://image.holynlp.com/2020-09-01-064257.jpg
+toc:
+toc_number:
+auto_open:
+copyright:
+copyright_author:
+copyright_author_href:
+copyright_url:
+copyright_info:
+mathjax:
+aplayer:
+highlight_shrink:
+---
+
 ### 1. kNN算法的基本原理
 > k近邻算法（分类）： 当输入一个新的值x的时候，根据与x最近的k个点的类别来判断x属于什么类别。
 

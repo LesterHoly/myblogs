@@ -1,9 +1,27 @@
-title: Ubuntu 18.04 初始配置及jira安装
-date: '2019-11-25 20:49:27'
-updated: '2019-11-25 20:53:06'
-tags: [ubuntu18.04, jira]
-permalink: /articles/2019/11/25/1574686167624.html
 ---
+title: Ubuntu 18.04 初始配置及jira安装
+date: 2020-05-01 09:54:07
+updated: 2020-05-01 09:54:07
+tags: Jira
+categories: Ubuntu
+keywords: Jira
+description:
+top_img:
+comments:
+cover: https://image.holynlp.com/2020-09-01-Jira-roadmap.jpg
+toc:
+toc_number:
+auto_open:
+copyright:
+copyright_author:
+copyright_author_href:
+copyright_url:
+copyright_info:
+mathjax:
+aplayer:
+highlight_shrink:
+---
+
 # Ubuntu 18.04 初始配置及jira安装
 
 ### 安装语言包
@@ -60,7 +78,7 @@ sudo netstat -tap | grep mysql
 
 设置mysql的root用户密码
 
-> mysql5.7安装完成后普通用户不能进mysql，原因：root的plugin被修改成了auth_socket，用密码登陆的plugin应该是mysql_native_password，直接用root权限登录就不用密码,修改root密码和登录验证方式： 
+> mysql5.7安装完成后普通用户不能进mysql，原因：root的plugin被修改成了auth_socket，用密码登陆的plugin应该是mysql_native_password，直接用root权限登录就不用密码,修改root密码和登录验证方式：
 
 ```sql
 sudo su  # 切换到root用户

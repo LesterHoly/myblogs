@@ -28,6 +28,5 @@ jobs:
             cp -r ~/myblogs/*.md .
             rm -f README.md
             cd /root/www/myHexoBlog/blog
-            hexo clean
-            hexo g
-            hexo s
+            chmod +x ~/myblogs/run.sh
+            ./run.sh

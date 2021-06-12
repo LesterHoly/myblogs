@@ -22,10 +22,10 @@ jobs:
           script: |
             cd ~/myblogs
             git pull
-            cd /root/docker_nginx/nginx/www/blog/source/_posts
+            cd /root/www/blog/source/_posts
             rm -f *.md
             cp -r ~/myblogs/*.md .
             rm -f README.md
-            cd ~/docker_nginx/nginx/www/blog
+            cd /root/www/blog
             hexo clean
             hexo g -s

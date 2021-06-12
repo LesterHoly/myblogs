@@ -22,10 +22,10 @@ jobs:
           script: |
             cd ~/myblogs
             git pull
-            cd /root/www/blog/source/_posts
+            cd /root/www/myHexoBlog/blog/source/_posts
             rm -f *.md
             cp -r ~/myblogs/*.md .
             rm -f README.md
-            cd /root/www/blog
+            cd /root/www/myHexoBlog/blog
             hexo clean
             hexo g -s

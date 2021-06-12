@@ -29,4 +29,5 @@ jobs:
             rm -f README.md
             cd /root/www/myHexoBlog/blog
             hexo clean
-            hexo g -s
+            hexo g
+            hexo s

@@ -29,4 +29,4 @@ jobs:
             rm -f README.md
             cd /root/www/myHexoBlog/blog
             chmod +x ~/myblogs/run.sh
-            ./run.sh
+            ~/myblogs/run.sh

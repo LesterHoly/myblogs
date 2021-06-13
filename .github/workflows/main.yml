@@ -21,5 +21,7 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.PEM }}
           script: |
-            chmod +x ~/myblogs/run.sh
-            ~/myblogs/run.sh
+            cd ~
+            cp ~/myblogs/run.sh ..
+            chmod +x ~/run.sh
+            ./run.sh

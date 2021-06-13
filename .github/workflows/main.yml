@@ -47,9 +47,9 @@ jobs:
           git config --local user.email ${{ secrets.USER_NAME }}
           git config --local user.name ${{ secrets.EMAIL }}
           git status
-#         git add --all
-#         git commit -m "Update static by github bot" -a
-#         git push origin public
+          git add --all
+          git commit -m "Update static by github bot" -a
+          git push origin master:public
       # - name: Upload to release
       #   uses: JasonEtco/upload-to-release@master
       #   with:

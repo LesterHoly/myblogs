@@ -39,6 +39,7 @@ jobs:
           hexo clean
           hexo g
           pwd
+          ls
 #       - name: SCP Public
 #         run: |
 #           cd /home/runner/work/myHexoBlog/blog

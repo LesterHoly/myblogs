@@ -39,9 +39,9 @@ jobs:
           hexo clean
           hexo g
           pwd
-          apt install tree -y
-          tree -L 2 .
-          scp -i ${{ secrets.PEM }}  -P ${{ secrets.PORT }} -r public ${{ secrets.USER }}@${{ secrets.HOST }}:~
+          ls
+          ls ./public
+          scp -i ${{ secrets.PEM }}  -P ${{ secrets.PORT }} -r ./public ${{ secrets.USER }}@${{ secrets.HOST }}:~
 #       - name: SCP Public
 #         run: |
 #           cd /home/runner/work/myHexoBlog/blog

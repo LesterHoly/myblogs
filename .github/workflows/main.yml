@@ -44,7 +44,7 @@ jobs:
           echo "run hexo"
           hexo clean
           hexo g
-          tar -zcvf release.tgz .public
+          tar -zcvf release.tgz ./public
         # git config --local user.email ${{ secrets.USER_NAME }}
         # git config --local user.name ${{ secrets.EMAIL }}
         # git add --all

@@ -41,7 +41,7 @@ jobs:
           pwd
           ls ./public
           cp -r ./public ~
-#         scp -i ${{ secrets.PEM }}  -P ${{ secrets.PORT }} -r ./public ${{ secrets.USER }}@${{ secrets.HOST }}:/root/
+          scp -i ${{ secrets.PEM }}  -P ${{ secrets.PORT }} -r ./public ${{ secrets.USER }}@${{ secrets.HOST }}:/root/www/blog/
 #       - name: SCP Public
 #         run: |
 #           cd /home/runner/work/myHexoBlog/blog

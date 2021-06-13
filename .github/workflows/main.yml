@@ -49,7 +49,7 @@ jobs:
           git status
           git add --all
           git commit -m "Update static by github bot" -a
-          git push origin master:public
+          git push
       # - name: Upload to release
       #   uses: JasonEtco/upload-to-release@master
       #   with:

@@ -38,7 +38,8 @@ jobs:
           echo "run hexo"
           hexo clean
           hexo g
-      - name: SCP Public
-        run: |
-          cd /home/runner/work/myHexoBlog/blog
-          scp -i ${{ secrets.PEM }}  -P ${{ secrets.PORT }} -r public ${{ secrets.USER }}@${{ secrets.HOST }}:${{ secrets.PUBLIC_PATH }}
+          pwd
+#       - name: SCP Public
+#         run: |
+#           cd /home/runner/work/myHexoBlog/blog
+#           scp -i ${{ secrets.PEM }}  -P ${{ secrets.PORT }} -r public ${{ secrets.USER }}@${{ secrets.HOST }}:${{ secrets.PUBLIC_PATH }}

@@ -29,7 +29,7 @@ jobs:
          cd myHexoBlog/blog
           npm install -g hexo-cli
           npm install
-      - name: generate public
+      - name: Generate Public
         run: |
           rm -f myHexoBlog/blog/source/_posts/*.md
           cp -r myblogs/*.md myHexoBlog/blog/source/_posts/
@@ -38,4 +38,6 @@ jobs:
           echo "run hexo"
           hexo clean
           hexo g
-          scp -i ${{ secrets.PEM }}  -P ${{ secrets.PORT }} -r public ${{ secrets.USER }}@${{ secrets.HOST }}:${{ secrets.PUBLIC_PATH }}
+      - name: SCP Public
+        run: |
+          scp -i ${{ secrets.PEM }}  -P ${{ secrets.PORT }} -r myHexoBlog/blog/public ${{ secrets.USER }}@${{ secrets.HOST }}:${{ secrets.PUBLIC_PATH }}

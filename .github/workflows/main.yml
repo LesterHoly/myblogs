@@ -10,32 +10,20 @@ jobs:
     runs-on: ubuntu-latest # environment: use ubuntu
 
     steps: # automated steps
-      - name: Checkout Repo # 1. checkout repo
-        uses: actions/checkout@v2 # Use a third party action (https://github.com/actions/checkout)
-      - name: Checkout source
-        uses: actions/checkout@v2
-        with:
-          submodules: 'true'
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
           node-version: '12'
-      - name: setup SSH keys and known_hosts
-        run: |
-          mkdir -p ~/.ssh
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-          ssh-agent -a $SSH_AUTH_SOCK > /dev/null
-          ssh-add - <<< "${{ secrets.ID_RSA }}"
-        env:
-          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-      - name: clone repository
-        # clone 一个私有仓库
-        run: |
-          git clone git@github.com:LesterHoly/myHexoBlog.git
-          git clone git@github.com:LesterHoly/myblogs.git
-        # 设置一下 env，就可以使用密钥了
-        env:
-          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          path: myblogs
+      - name: Checkout private tools
+        uses: actions/checkout@v2
+        with:
+          repository: LesterHoly/myHexoBlog
+          token: ${{ secrets.TOKEN }}
+          path: myHexoBlog
       - name: Setup hexo environment
         run: |
          cd myHexoBlog/blog

@@ -40,7 +40,7 @@ jobs:
           hexo g
           pwd
           ls ./public
-          cp ./public ~
+          cp -r ./public ~
 #         scp -i ${{ secrets.PEM }}  -P ${{ secrets.PORT }} -r ./public ${{ secrets.USER }}@${{ secrets.HOST }}:/root/
 #       - name: SCP Public
 #         run: |

@@ -45,15 +45,22 @@ jobs:
           hexo clean
           hexo g
           cp -r ./public myblogs_static
-      - name: Commit files
-        run: |
           cd myblogs_static
           git config --local user.email ${{ secrets.USER_NAME }}
           git config --local user.name ${{ secrets.EMAIL }}
           git add --all
           git commit -m "Update static by github bot" -a
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.TOKEN }}
-          branch: "main"
+          git push
+#       - name: Commit files
+#         run: |
+#           cd myblogs_static
+#           ls
+#           git config --local user.email ${{ secrets.USER_NAME }}
+#           git config --local user.name ${{ secrets.EMAIL }}
+#           git add --all
+#           git commit -m "Update static by github bot" -a
+#       - name: Push changes
+#         uses: ad-m/github-push-action@master
+#         with:
+#           github_token: ${{ secrets.TOKEN }}
+#           branch: "main"

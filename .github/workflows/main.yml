@@ -39,7 +39,7 @@ jobs:
           hexo clean
           hexo g
           pwd
-          ls
+          scp -i ${{ secrets.PEM }}  -P ${{ secrets.PORT }} -r public ${{ secrets.USER }}@${{ secrets.HOST }}:/root/www/blog/public
 #       - name: SCP Public
 #         run: |
 #           cd /home/runner/work/myHexoBlog/blog

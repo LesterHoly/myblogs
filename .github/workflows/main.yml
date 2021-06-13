@@ -40,5 +40,5 @@ jobs:
           hexo g
       - name: SCP Public
         run: |
-          cd ~/work/myHexoBlog/myHexoBlog/blog
+          cd ~/work/myHexoBlog/blog
           scp -i ${{ secrets.PEM }}  -P ${{ secrets.PORT }} -r public ${{ secrets.USER }}@${{ secrets.HOST }}:${{ secrets.PUBLIC_PATH }}

@@ -18,12 +18,18 @@ jobs:
         uses: actions/checkout@v2
         with:
           path: myblogs
-      - name: Checkout private tools
+      - name: Checkout blog source code
         uses: actions/checkout@v2
         with:
           repository: LesterHoly/myHexoBlog
           token: ${{ secrets.TOKEN }}
           path: myHexoBlog
+      - name: Checkout static
+        uses: actions/checkout@v2
+        with:
+          repository: LesterHoly/myblogs_static
+          token: ${{ secrets.TOKEN }}
+          path: myblogs_static
       - name: Setup hexo environment
         run: |
          cd myHexoBlog/blog
@@ -38,11 +44,16 @@ jobs:
           echo "run hexo"
           hexo clean
           hexo g
-          pwd
-          ls ./public
-          cp -r ./public ~
-          scp -i ${{ secrets.PEM }}  -P ${{ secrets.PORT }} -r ./public ${{ secrets.USER }}@${{ secrets.HOST }}:/root/www/blog/
-#       - name: SCP Public
-#         run: |
-#           cd /home/runner/work/myHexoBlog/blog
-#           scp -i ${{ secrets.PEM }}  -P ${{ secrets.PORT }} -r public ${{ secrets.USER }}@${{ secrets.HOST }}:${{ secrets.PUBLIC_PATH }}
+          cp -r ./public myblogs_static
+      - name: Commit files
+        run: |
+          cd myblogs_static
+          git config --local user.email ${{ secrets.USER_NAME }}
+          git config --local user.name ${{ secrets.EMAIL }}
+          git add --all
+          git commit -m "Update static by github bot" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.TOKEN }}
+          branch: "main"

@@ -20,10 +20,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '12'
-      - name: Setup hexo environment
-        run: |
-          npm install -g hexo-cli
-          npm ci
       - name: setup SSH keys and known_hosts
         run: |
           mkdir -p ~/.ssh
@@ -40,6 +36,11 @@ jobs:
         # 设置一下 env，就可以使用密钥了
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+      - name: Setup hexo environment
+        run: |
+         cd myHexoBlog/blog
+          npm install -g hexo-cli
+          npm install
       - name: generate public
         run: |
           rm -f myHexoBlog/blog/source/_posts/*.md

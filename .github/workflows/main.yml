@@ -21,12 +21,5 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.PEM }}
           script: |
-            cd ~/myblogs
-            git pull
-            cd /root/www/myHexoBlog/blog/source/_posts
-            rm -f *.md
-            cp -r ~/myblogs/*.md .
-            rm -f README.md
-            cd /root/www/myHexoBlog/blog
             chmod +x ~/myblogs/run.sh
             ~/myblogs/run.sh
